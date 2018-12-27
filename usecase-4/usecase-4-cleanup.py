@@ -122,6 +122,21 @@ def main():
                     KeyId=kms_key_id,
                     PendingWindowInDays=7
                 )
+                
+        # Cleanup the cloudformation stack 
+        cf_client = boto3.client('cloudformation',region)
+        
+        response = cf_client.list_stacks(
+            StackStatusFilter=[
+                'CREATE_COMPLETE',
+            ]
+        )
+        
+        for stack in response['StackSummaries']:
+            if stack['StackName'] == 'data-protection-cse-datakey-caching':
+                response = cf_client.delete_stack(
+                    StackName='data-protection-cse-datakey-caching',
+                )
         
         print "\n Cleanup Successful" 
     except:
