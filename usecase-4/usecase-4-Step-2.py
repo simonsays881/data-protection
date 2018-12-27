@@ -152,6 +152,7 @@ def main():
                     
         print "\nModule run was successful !!"
         print "\nPlain text file plaintext_u.txt was encrypted twice !!"
+        print "\n Step 2 completed successfully"
 
         
     except:
