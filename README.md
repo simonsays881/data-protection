@@ -65,3 +65,5 @@ Once you run the command above you will see a folder called **usecase-4** in the
 ### Some questions to think about :
 
 * Why do we wait for 2 minutes in Step 4 ?
+* When you run the python module check-gendatakey.py should you see prints for one 
+  GenerateDataKey API call or two GenerateDataKey API calls ?
