@@ -12,7 +12,7 @@ This workshop demonstrates client side encryption
 
 [![Deploy Client Side Encryption CloudFormation Stack](images/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?#/stacks/new?stackName=cryptobuilders-iam-user-creation&templateURL=https://s3.amazonaws.com/crypto-workshop-dont-delete/template-cse.yaml)
 
-The above stack creates a cloudwatch event rule used for this workshop 
+The above stack creates a cloudwatch event rule used for this workshop to analyze GenerateDataKey API calls
 
 ## Let's do some client side encryption
 
