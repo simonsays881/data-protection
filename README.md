@@ -8,7 +8,7 @@ This workshop demonstrates client side encryption with data key caching
 
 ### Let's setup the Cloudformation stack required for this workshop :
 
-[![Deploy Client Side Encryption With Data Key Caching CloudFormation Stack](images/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?#/stacks/new?stackName=cryptobuilders-iam-user-creation&templateURL=https://s3.amazonaws.com/crypto-workshop-dont-delete/template-cse-data-key-caching.yaml)
+[![Deploy Client Side Encryption With Data Key Caching CloudFormation Stack](images/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?#/stacks/new?stackName=data-protection-cse-datakey-caching&templateURL=https://s3.amazonaws.com/crypto-workshop-dont-delete/template-cse-data-key-caching.yaml)
 
 The above stack creates a cloudwatch event rule used for this workshop 
 
