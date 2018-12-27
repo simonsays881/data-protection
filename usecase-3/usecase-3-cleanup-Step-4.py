@@ -119,6 +119,7 @@ def main():
                 )
     
         print "\n Cleanup Successful" 
+        print "\n Step 4 completed successfully"
      
     except:
         print "Unexpected error:", sys.exc_info()[0]

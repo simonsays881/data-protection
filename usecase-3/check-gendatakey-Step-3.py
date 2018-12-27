@@ -30,6 +30,7 @@ def main():
         
                 if response['TagSet'][0]['Value'] == 'usecase-3-cse':
                     print "GenerateDataKey API Called"
+        print "\n Step 3 completed successfully"
     except:
         print "Unexpected error:", sys.exc_info()[0]
         raise

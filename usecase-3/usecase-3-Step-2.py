@@ -81,6 +81,7 @@ def main():
                     plaintext.write(chunk)
                     
         print "\nModule run was successful !!"
+        print "\n Step 2 completed successfully"
     except:
         print "Unexpected error:", sys.exc_info()[0]
         raise
