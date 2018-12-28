@@ -126,7 +126,7 @@ def main():
         textfile.close()
         
         print "Successfully created signed subordinate CA pem file signed_subordinate_ca_cert.pem"
-        print "Step-4 has been successfully completed \n"
+        print "\nStep-4 has been successfully completed \n"
 
     except:
         print "Unexpected error:", sys.exc_info()[0]

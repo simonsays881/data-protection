@@ -187,7 +187,7 @@ def main():
         
         print "Successfully created server certificate webserver_cert.pem for the flask web server\n"
         print "Successfully created chain of trust for the flask web server"
-        print "Step-6 has been successfully completed \n"
+        print "\nStep-6 has been successfully completed \n"
 
     except:
         print "Unexpected error:", sys.exc_info()[0]

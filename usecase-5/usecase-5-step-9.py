@@ -31,7 +31,7 @@ def main():
         returned_output = subprocess.check_output(command)
         print returned_output
         print "Certificate is trusted and is valid"
-        print "Step-9 has been successfully completed \n"
+        print "\nStep-9 has been successfully completed \n"
     except subprocess.CalledProcessError as e:
         print "\nCertificate is not trusted - cannot validate server certificate"
     except:

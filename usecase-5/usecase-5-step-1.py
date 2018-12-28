@@ -64,7 +64,7 @@ def main():
             ddb_client.put_item(TableName='shared_variables_crypto_builders', \
                                 Item={'shared_variables':{'N':'1000'}, 'session':{'N':'1000'}})
             print "\nshared_variables_crypto_builders DynamoDB table created"
-            print "Step-1 has been successfully completed \n"
+            print "\nStep-1 has been successfully completed \n"
 
     except:
         print "Unexpected error:", sys.exc_info()[0]

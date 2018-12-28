@@ -130,7 +130,7 @@ def main():
         
         print "Success - Self signed certificate file self_signed_cert.pem created"
         print "This self signed certificate will be used in the certificate chain of trust"
-        print "Step-3 has been successfully completed \n"
+        print "\nStep-3 has been successfully completed \n"
 
     except:
         print "Unexpected error:", sys.exc_info()[0]

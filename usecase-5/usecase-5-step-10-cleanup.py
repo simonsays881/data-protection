@@ -140,7 +140,7 @@ def main():
                             )
                         
         print "\nEverything cleaned up ,you are all good !!\n"
-        print "Step-10 has been successfully completed \n"
+        print "\nStep-10 cleanup has been successfully completed \n"
     
     except:
         print "Unexpected error:", sys.exc_info()[0]
