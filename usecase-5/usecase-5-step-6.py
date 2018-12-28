@@ -41,6 +41,7 @@ def main():
         ddb_client = boto3.client('dynamodb', region)
     
         current_directory_path = os.path.dirname(os.path.realpath(__file__)) + '/'
+        print "This step will take about 2 minutes to complete\n"
         
         ###########################################################################################
         #   Getting subordinate_pca_arn stored in dynamo DB                                       #
@@ -186,6 +187,8 @@ def main():
         
         print "Successfully created server certificate webserver_cert.pem for the flask web server\n"
         print "Successfully created chain of trust for the flask web server"
+        print "Step-6 has been successfully completed \n"
+
     except:
         print "Unexpected error:", sys.exc_info()[0]
         raise

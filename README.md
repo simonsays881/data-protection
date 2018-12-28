@@ -90,11 +90,13 @@ Run the python module named ***usecase-5-step-5.py***
 * The certificate chain contains the self signed CA certificate that we created in **Step 3**
 * After this operation the subordinate privcate certificate authority(CA) changes status to ACTIVE. 
 * Browse to the ACM service within the AWS console and you should see the status of the subordiate CA with 
-  common name **reinvent.builder.subordinate** as ACTIVE as shown below
+  common name **acmpcausecase5.subordinate** as ACTIVE as shown below
 * We are at a point where the subordinate private certificate authority(PCA) can issue private certificates
   for any endpoint, device or server
 * You should see the following printed in the runner window pane below 
    * Successfully imported signed cert and certificate chain into ACM
+
+<a><img src="images/acmpca-status-active.png" width="800" height="600"></a><br>
 
 ### Step 6 :
 

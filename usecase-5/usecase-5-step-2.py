@@ -162,6 +162,9 @@ def main():
             TableName='shared_variables_crypto_builders',
             UpdateExpression='SET #spa = :a, #scsn = :b',
         )
+        
+        print "Step-2 has been successfully completed \n"
+
     except:
         print "Unexpected error:", sys.exc_info()[0]
         raise

@@ -24,6 +24,7 @@ def main():
         command = "curl --verbose https://127.0.0.1:5000/"
         command = shlex.split(command)
         returned_output = subprocess.check_output(command)
+        print "Step-8 has been successfully completed \n"
     except subprocess.CalledProcessError as e:
         print "\nCertificate is not trusted - cannot validate server certificate"
     except:
