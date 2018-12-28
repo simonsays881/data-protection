@@ -81,7 +81,7 @@ def main():
                 },
             },
             ReturnValues='ALL_NEW',
-            TableName='shared_variables_crypto_builders',
+            TableName='shared_variables_crypto_builders_usecase_6',
             UpdateExpression='SET #rsn = :a, #rcpk = :b',
         )
     

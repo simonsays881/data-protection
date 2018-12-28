@@ -42,7 +42,7 @@ def main():
         #   The target group was created in step 1                                                       #
         ##################################################################################################
         response = ddb_client.get_item(
-            TableName='shared_variables_crypto_builders',
+            TableName='shared_variables_crypto_builders_usecase_6',
             Key={
                 'shared_variables': {
                     'N': '1000',
@@ -101,7 +101,7 @@ def main():
                 },
             },
             ReturnValues='ALL_NEW',
-            TableName='shared_variables_crypto_builders',
+            TableName='shared_variables_crypto_builders_usecase_6',
             UpdateExpression='SET #certarn = :a',
         )
         
@@ -160,7 +160,7 @@ def main():
                                 },
                             },
                             ReturnValues='ALL_NEW',
-                            TableName='shared_variables_crypto_builders',
+                            TableName='shared_variables_crypto_builders_usecase_6',
                             UpdateExpression='SET #listarn = :a',
                         )
         

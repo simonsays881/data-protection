@@ -1,6 +1,6 @@
 """
 ###############################################################################
-#  Cleanup all resources created within python modules for ACM usecase-5      #
+#  Cleanup all resources created within python modules for ACM usecase-6      #
 #                                                                             #
 #  1. S3 buckets used for CRL(Certificate revocation list)                    #
 #                                                                             #
@@ -68,9 +68,9 @@ def main():
         private_cert_arn = None
         listener_arn = None
         try:
-            response = ddb_client.describe_table(TableName='shared_variables_crypto_builders')
+            response = ddb_client.describe_table(TableName='shared_variables_crypto_builders_usecase_6')
             if response is not None:
-                response = ddb_client.get_item(TableName='shared_variables_crypto_builders', \
+                response = ddb_client.get_item(TableName='shared_variables_crypto_builders_usecase_6', \
                     Key={
                             'shared_variables': {
                                 'N': '1000',
@@ -95,7 +95,7 @@ def main():
                 
                 # Delete the DDB Table that stores key value pairs shared across multiple python modules
                 response = ddb_client.delete_table(
-                    TableName='shared_variables_crypto_builders'
+                    TableName='shared_variables_crypto_builders_usecase_6'
                 )
         except ddb_client.exceptions.ResourceNotFoundException:
             print "No DDB table found to delete !! that's OK"

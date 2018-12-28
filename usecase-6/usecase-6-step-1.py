@@ -1,6 +1,6 @@
 """
 ####################################################################################################
-# Create DynamoDB table called shared_variables_crypto_builders or storing key value               #
+# Create DynamoDB table called shared_variables_crypto_builders_usecase_6 or storing key value               #
 # pairs shared across multiple python modulesshared variables can be private keys,variables        #
 # needed for ACM certs etc.Since the nature of stored data is sensitive,the DDB table is encrypted #
 ####################################################################################################
@@ -11,9 +11,9 @@ import boto3
 
 def main():
     """
-    ###################################################################################
-    #  DynamoDB table  shared_variables_crypto_builders for storing shared variables  #
-    ###################################################################################
+    #############################################################################################
+    #  DynamoDB table  shared_variables_crypto_builders_usecase_6 for storing shared variables  #
+    #############################################################################################
     """
     try:
         az = subprocess.check_output(['curl', '-s', 'http://169.254.169.254/latest/meta-data/placement/availability-zone'])
@@ -22,12 +22,12 @@ def main():
         ddb_client = boto3.client('dynamodb', region)
         # Create DynamoDB table for storing shared variables across python modules
         try:
-            ddb_client.describe_table(TableName='shared_variables_crypto_builders')
-            print "shared_variables_crypto_builders Table already exists, please delete it before re-running this module"
+            ddb_client.describe_table(TableName='shared_variables_crypto_builders_usecase_6')
+            print "shared_variables_crypto_builders_usecase_6 Table already exists, please delete it before re-running this module"
         except ddb_client.exceptions.ResourceNotFoundException:
             # Since table does not exist create it
             ddb_client.create_table(
-                TableName='shared_variables_crypto_builders',
+                TableName='shared_variables_crypto_builders_usecase_6',
                 KeySchema=[
                     {
                         'AttributeName': 'shared_variables',
@@ -59,10 +59,10 @@ def main():
             
             print "Pending DynamoDB table creation for storing shared variables"
             waiter = ddb_client.get_waiter('table_exists')
-            waiter.wait(TableName='shared_variables_crypto_builders')
-            ddb_client.put_item(TableName='shared_variables_crypto_builders', \
+            waiter.wait(TableName='shared_variables_crypto_builders_usecase_6')
+            ddb_client.put_item(TableName='shared_variables_crypto_builders_usecase_6', \
                                 Item={'shared_variables':{'N':'1000'}, 'session':{'N':'1000'}})
-            print "\nshared_variables_crypto_builders DynamoDB table created"
+            print "\nshared_variables_crypto_builders_usecase_6 DynamoDB table created"
             
             ##########################################################################################
             #  Associate the ec2 instance of the cloud9 environment with the default security group  #
@@ -149,7 +149,7 @@ def main():
                                 },
                             },
                             ReturnValues='ALL_NEW',
-                            TableName='shared_variables_crypto_builders',
+                            TableName='shared_variables_crypto_builders_usecase_6',
                             UpdateExpression='SET #tgarn = :a',
                         )
     
