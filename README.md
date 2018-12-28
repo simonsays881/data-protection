@@ -96,7 +96,7 @@ Run the python module named ***usecase-5-step-5.py***
 * You should see the following printed in the runner window pane below 
    * Successfully imported signed cert and certificate chain into ACM
 
-<a><img src="images/acmpca-status-active.png" width="800" height="600"></a><br>
+<a><img src="images/acmpcausecase5-status-active.png" width="800" height="600"></a><br>
 
 ### Step 6 :
 
