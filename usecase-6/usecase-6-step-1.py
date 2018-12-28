@@ -21,6 +21,7 @@ def main():
         region = list_az[0]+ '-' + list_az[1] + '-' + list_az[2][0]
         ddb_client = boto3.client('dynamodb', region)
         elbv2_client = boto3.client('elbv2', region)
+        lambda_client = boto3.client('lambda', region)
 
         # Create DynamoDB table for storing shared variables across python modules
         try:
