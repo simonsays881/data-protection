@@ -56,7 +56,7 @@ Run the python module named ***usecase-6-step-2.py***
 * In the AWS console browse to the AWS Certificate Manager service(ACM) . Under Private CA's you will see the private CA created and
   the status should show "Pending Certificate"
 
-<a><img src="images/private-ca-pending-cert.png" width="500" height="300"></a><br>
+<a><img src="images/private-ca-pending-cert-usecase-6.png" width="800" height="500"></a><br>
 
 **Some questions to think about :**
 
