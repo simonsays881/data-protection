@@ -20,6 +20,8 @@ def main():
         list_az = az.split('-')
         region = list_az[0]+ '-' + list_az[1] + '-' + list_az[2][0]
         ddb_client = boto3.client('dynamodb', region)
+        elbv2_client = boto3.client('elbv2', region)
+
         # Create DynamoDB table for storing shared variables across python modules
         try:
             ddb_client.describe_table(TableName='shared_variables_crypto_builders_usecase_6')
@@ -113,6 +115,7 @@ def main():
             ######################################
             #  Create the target group for ALB   #
             ######################################
+            response = elbv2_client.describe_load_balancers()
             for LB in  response['LoadBalancers']:
                 response = elbv2_client.describe_tags(
                     ResourceArns=[
