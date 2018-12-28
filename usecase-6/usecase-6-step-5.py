@@ -50,6 +50,7 @@ def main():
         )
         
         print "Successfully imported signed cert and certificate chain into ACM"
+        print "\nStep-5 has been successfully completed \n"
     except:
         print "Unexpected error:", sys.exc_info()[0]
         raise

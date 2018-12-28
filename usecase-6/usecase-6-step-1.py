@@ -172,6 +172,7 @@ def main():
                             ]
                         )
                         print "\nLambda targets for the ALB successfully registered"
+        print "\nStep-1 has been successfully completed \n"                
     except:
         print "Unexpected error:", sys.exc_info()[0]
         raise
