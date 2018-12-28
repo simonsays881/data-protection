@@ -40,7 +40,7 @@ def main():
         current_directory_path = os.path.dirname(os.path.realpath(__file__)) + '/'
        
         response = ddb_client.get_item(
-            TableName='shared_variables_crypto_builders',
+            TableName='shared_variables_crypto_builders_usecase_6',
             Key={
                 'shared_variables': {
                     'N': '1000',
