@@ -70,7 +70,7 @@ def main():
         #   The certificate chain is required by clients to trust the HTTPS Connection to alb.workshop.com  #
         #####################################################################################################
         response = acm_client.get_certificate(
-            CertificateAuthorityArn=certificate_arn
+            CertificateArn=certificate_arn
         )
         
         current_directory_path = os.path.dirname(os.path.realpath(__file__)) + '/'
