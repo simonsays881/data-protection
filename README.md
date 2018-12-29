@@ -1,7 +1,7 @@
 ## ACM Private Certificate authority - Generating and using private certificate for a private domain
 
 This workshop demonstrates how ACM Private Certificate authority(PCA) can be created and made operational. It then helps you learn
-about how ACM PCA can be used to generate private certificates for a private domain so that the private domai can be access over
+about how ACM PCA can be used to generate private certificates for a private domain so that the private domain can be accessed over
 a HTTPS connection
 
 ## Let's look at some concepts and the architecture diagram:
@@ -18,20 +18,20 @@ Please run the below cloudformation stack in your AWS account
 
 The above stack creates the necessary services to build out the AWS architecture shown above 
 
-## Let's do some private cert generaton with AWS Certificate Manager(ACM) private certificate authority(PCA) :
+## Let's do some private cert generaton for a private domain with AWS Certificate Manager(ACM) private certificate authority(PCA) :
 
 Open the Cloud9 IDE environment called **workshop-environment**. Within the Cloud9 IDE open the bash terminal and use the following command to checkout code for this usecase :
 
 **git checkout acm-pca-usecase-6**
 
-Once you run the command above you will see a folder called **usecase-6** in the Cloud9 environment. Follow the below steps:
+Once you run the command above you will see a folder called **usecase-6** in the Cloud9 environment. Follow the steps below:
 
 ### Step 1 :
 
 Run the python module named ***usecase-6-step-1.py***
 
 * First you will see **"Pending DynamoDB table creation for storing shared variables"** printed on the runner window pane below
-* Wait for about 45 seconds 
+* This step takes about 30 seconds to complete
 * You should see the following printed in the runner window pane below
 
 **"shared_variables_crypto_builders DynamoDB table created"** 
