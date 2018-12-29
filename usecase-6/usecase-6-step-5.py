@@ -30,7 +30,7 @@ def main():
         ddb_client = boto3.client('dynamodb', region)
         
         response = ddb_client.get_item(
-            TableName='shared_variables_crypto_builders',
+            TableName='shared_variables_crypto_builders_usecase_6',
             Key={
                 'shared_variables': {
                     'N': '1000',
