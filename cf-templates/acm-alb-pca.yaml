@@ -30,7 +30,6 @@ Resources:
             
                # This is the lambda origin behing the application load balancer
                def lambda_handler(event, context):
-                  print "Lambda for returning HTML was called"
                   response = {
                     "statusCode": 200,
                     "statusDescription": "200 OK",
