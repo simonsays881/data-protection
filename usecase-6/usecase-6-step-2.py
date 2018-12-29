@@ -8,6 +8,7 @@ import subprocess
 import sys
 import random
 import json
+import time
 import boto3
 
 def main():
@@ -58,6 +59,7 @@ def main():
                 }
             )
         
+        time.sleep(2)
         response = s3_client.put_bucket_tagging(
             Bucket=crl_bucket_name,
             Tagging={
