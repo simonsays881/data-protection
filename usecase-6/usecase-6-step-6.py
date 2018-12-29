@@ -2,8 +2,6 @@
 #################################################################################
 #  Issuing a certificate for the private domain alb.workshop.com                #
 #                                                                               #
-#  Signing the webserver csr to obtain the endpoint cert                        #
-#  and the certificate chain from acm                                           #
 #                                                                               #
 #  The endpoint cert and the certificate chain can be used                      #
 #  for accomplishing a successful TLS connection from a client to the webserver #
@@ -62,8 +60,11 @@ def main():
         )
         certificate_arn = response['CertificateArn']
       
+        print "Attaching HTTPS listener to ALB and requesting certificate for the private domain alb.workshop.com\n"
+        print "This step takes about 1 minute to complete\n"
+
         # It takes some time to create the certificate and for the certificate to be active , hence the sleep in the code
-        time.sleep(10)
+        time.sleep(5)
         
         #####################################################################################################
         #   Getting certificate chain for the issued private cert                                           #
@@ -165,7 +166,7 @@ def main():
                         )
         
         print "Successfully attached a HTTPS listener to the ALB"
-        print "\nSubordinate PCA reinvent.builder.subordinate successfully issued a private certificate for the private domain alb.workshop.com"
+        print "\nSuccessfully issued a private certificate for the private domain alb.workshop.com"
         print "\nStep-6 has been successfully completed \n"
     except:
         print "Unexpected error:", sys.exc_info()[0]

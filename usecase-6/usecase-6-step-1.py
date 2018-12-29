@@ -112,7 +112,7 @@ def main():
             #  include the default security group                                                        #    
             ##############################################################################################
             instance.modify_attribute(Groups=all_sg_ids)       
-            print "\nDefault security group of VPC added to the Cloud9 environment EC2 instance"
+            #print "\nDefault security group of VPC added to the Cloud9 environment EC2 instance"
             
             ######################################
             #  Create the target group for ALB   #

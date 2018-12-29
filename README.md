@@ -70,7 +70,7 @@ Run the python module named ***usecase-6-step-3.py***
 
 * This module creates a self signed root certificate with the common name **rootca-reinvent-builder**
 * You can see in the code that the private key associated with the self signed cert is stored in an encrypted DynamoDB table.
-  This is purely for demonstration purposes. In your organization you should store it in an HSM or a secure vault
+  This is purely for demonstration purposes. In your organization you should store the private key in an HSM or a secure vault
 * You should see the following printed in the runner window pane below 
    * Success - Self signed certificate file ***self-signed-cert.pem*** created"
    * "This self signed certificate will be used in the certificate chain of trust"
@@ -92,7 +92,8 @@ Run the python module named ***usecase-6-step-4.py***
 * The certificate signing request is signed using the self signed certificate and it's private key 
   that was created in **Step 3** 
 * The signed cert is stored in a pem file called ***signed_subordinate_ca_cert.pem***
-* You should see the following printed in the runner window pane below 
+* The private key lives within HSM's in the AWS Certificate Manager(ACM) service
+* You should see the following printed in the runner window pane  
    * Successfully created signed subordinate CA pem file ***signed_subordinate_ca_cert.pem*** 
 
 ### Step 5 :
@@ -100,7 +101,7 @@ Run the python module named ***usecase-6-step-4.py***
 Run the python module named ***usecase-6-step-5.py***
 
 * This module imports the subordinate CA signed certificate ***signed_subordinate_ca_cert.pem*** and 
-  certificate chain of trust into AWS Certificate Manager(ACM)
+  the certificate chain of trust into AWS Certificate Manager(ACM)
 * The certificate chain contains the self signed CA certificate that we created in **Step 3**
 * After this operation the subordinate privcate certificate authority(CA) changes status to ACTIVE. 
 * Browse to the ACM service within the AWS console and you should see the status of the subordiate CA with 
@@ -114,28 +115,25 @@ Run the python module named ***usecase-6-step-5.py***
 
 ### Step 6 :
 
-**Time : 1 minute**
-
 Run the python module named ***usecase-6-step-6.py***
 
 * This module takes about 1 minute to complete 
-* This module uses the ACM Private certificate authority(PCA) to generate a certificate for the private domain
+* This module uses AWS Certificate Manager service(ACM) to generate a certificate for the private domain
   alb.workshop.com. You cannot access this domain from the public internet.
 * The certificate chain of trust required for trusting the private domain alb.workshop.com is created
   and written into the local file ***cert_chain.pem***
 * An HTTPS listener is attached to the application load balancer and this listener is associated with the private certificate issued for the domain alb.workshop.com
-* After these steps alb.workshop.com is ready to server content
+* After these steps alb.workshop.com is ready to serve content
 * You should see the following printed in the runner window pane below :
 
 **"Successfully attached a HTTPS listener to the ALB"**
-**"Subordinate PCA reinvent.builder.subordinate successfully issued a private certificate for the private domain alb.workshop.com"**
+**"Successfully issued a private certificate for the private domain alb.workshop.com"**
 
 ### Step 7 :
 
 Run the python module named ***usecase-5-step-7.py***
 
-* This module uses the below curl command to do a HTTPS GET on the private domain alb.workshop.com that's fronted 
-  by an application load balancer with an HTTPS listener   
+* This module uses the below curl command to do a HTTPS GET on the private domain alb.workshop.com
 
   curl --verbose -X GET https://alb.workshop.com/
   
@@ -143,9 +141,9 @@ Run the python module named ***usecase-5-step-7.py***
 
 * Since the curl commmand does not supply the certificate trust chain as a parameter the HTTPS connection is going to
   complain that the server certificate is not recognized. You will see the following printed in the runner window
-  pane below if you look through the printed log 
+  pane if you look through the printed log 
 
-  ** curl: (60) Peer's Certificate issuer is not recognized **
+  ** curl: (60) Peer's certificate issuer has been marked as not trusted by the user. **
   ** Certificate is not trusted - cannot validate server certificate **
 
 **Some questions to think about :**
@@ -157,8 +155,7 @@ Run the python module named ***usecase-5-step-7.py***
 
 Run the python module named **usecase-6-step-8.py**
 
-* This module uses the below curl command to do a HTTPS GET on the private domain alb.workshop.com that's fronted 
-  by an application load balancer with an HTTPS listener  
+* This module uses the below curl command to do a HTTPS GET on the private domain alb.workshop.com 
 
   curl --verbose --cacert cert_chain.pem -X GET alb.workshop.com
   
@@ -166,7 +163,7 @@ Run the python module named **usecase-6-step-8.py**
   alb.workshop is trusted and successfully authenticated. You should see the following printed in the 
   runner window pane.
   
-  **Hello World!**
+  **The HTML that the lambd origin returns**
   
   **Certificate is trusted and is valid**
 
@@ -176,10 +173,11 @@ Run the python module named ***usecase-6-step-9-cleanup.py***
 
 This is the step for cleaning up all the resources that were created for the **acm-pca-usecase-6**
 
-* This module cleans up all the local files, S3 buckets, target groups and listeners that was created in the python modules for this usecase.
+* This module cleans up all the local files, S3 buckets, target groups,listeners that was created in the python modules for this usecase.
+* In addition the cloudformation stack that was setup for this usecase is also deleted
 * You should see the following printed in the runner window pane.
 
-**"\nEverything cleaned up ,you are all good !!"**
+**Everything cleaned up ,you are all good !!**
 
 
 

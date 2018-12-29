@@ -43,25 +43,17 @@ def main():
         
         self_signed_cert_filename_path = current_directory_path + 'self-signed-cert.pem'
         signed_subordinate_ca_cert_filename_path = current_directory_path + 'signed_subordinate_ca_cert.pem'
-        webserver_cert_path = current_directory_path + 'webserver_cert.pem'
-        webserver_cert_chain_path = current_directory_path + 'webserver_cert_chain.pem'
-        webserver_privkey_path = current_directory_path + 'webserver_privkey.pem'
-    
+        cert_chain_path = current_directory_path + 'cert_chain.pem'
+       
         if Path(self_signed_cert_filename_path).exists():
             os.remove(self_signed_cert_filename_path)
             
         if Path(signed_subordinate_ca_cert_filename_path).exists():
             os.remove(signed_subordinate_ca_cert_filename_path)
-            
-        if Path(webserver_cert_path).exists():
-            os.remove(webserver_cert_path)   
-            
+    
         if Path(webserver_cert_chain_path).exists():
-            os.remove(webserver_cert_chain_path)    
-            
-        if Path(webserver_privkey_path).exists():
-            os.remove(webserver_privkey_path) 
-            
+            os.remove(cert_chain_path)    
+       
         ##########################################
         #  Delete the subordinate pca created    #
         ##########################################
