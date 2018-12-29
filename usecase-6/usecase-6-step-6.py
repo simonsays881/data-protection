@@ -165,7 +165,7 @@ def main():
                         )
         
         print "Successfully attached a HTTPS listener to the ALB"
-        print "Subordinate PCA reinvent.builder.subordinate successfully issued a private certificate for the private domain alb.workshop.com"
+        print "\nSubordinate PCA reinvent.builder.subordinate successfully issued a private certificate for the private domain alb.workshop.com"
         print "\nStep-6 has been successfully completed \n"
     except:
         print "Unexpected error:", sys.exc_info()[0]

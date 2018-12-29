@@ -201,10 +201,10 @@ def main():
         # #####################################################################################################################################
         # #  Cleanup the cloudformation template as well
         # #####################################################################################################################################
-        # response = client.delete_stack(
-        #     StackName='acm-pca-usecase-6'
-        # )
-        # print "Deleting Cloudformation stack created for acm-pca-usecase-6 .It takes about 3 minutes for the CF stack to be deleted"
+        response = client.delete_stack(
+            StackName='acm-pca-usecase-6'
+        )
+        print "\nDeleting Cloudformation stack created for this usecase .It takes about 3 minutes for the CF stack to be deleted"
         
         print "\nEverything cleaned up ,you are all good !!\n"
         print "\nStep-9 cleanup has been successfully completed \n"
