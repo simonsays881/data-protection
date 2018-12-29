@@ -38,6 +38,8 @@ def main():
         ####################################################################################
     
         current_directory_path = os.path.dirname(os.path.realpath(__file__)) + '/'
+        print "\nThis step takes about 45 seconds to complete \n"
+
         
         self_signed_cert_filename_path = current_directory_path + 'self-signed-cert.pem'
         signed_subordinate_ca_cert_filename_path = current_directory_path + 'signed_subordinate_ca_cert.pem'
