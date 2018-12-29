@@ -21,9 +21,9 @@ Once you run the command above you will see a folder called **usecase-5** in the
 
 Run the python module named ***intial-config-step-1.py***
 
-* First you will see **"Pending DynamoDB table creation for storing shared variables"** printed on the runner window pane below
+* First you will see **Pending DynamoDB table creation for storing shared variables** printed on the runner window pane below
 * Wait for about 45 seconds 
-* You should see **"shared_variables_crypto_builders DynamoDB table created"** printed 
+* You should see **shared_variables_crypto_builders DynamoDB table created** printed 
 
 This module will create a DynamoDB table called **shared_variables_crypto_builders** . The primary purpose of this table is to share variables
 across the different python modules that we will run in this usecase.
@@ -36,9 +36,9 @@ Run the python module named ***usecase-5-step-2.py***
 * This private certificate authority will publish certificate revocation lists within a S3 bucket whose name
   starts with **builder-acm-pca-usecase-5-bucket-pca-crl**
 * You should see the following printed in the runner window pane
-    * "Private CA has been created"
-    * "Please generate the CSR and get it signed by your organizations's root cert"
-    * "Success : The ARN of the subordinate private certificate authority is : "
+    * Private CA has been created
+    * Please generate the CSR and get it signed by your organizations's root cert
+    * Success : The ARN of the subordinate private certificate authority is : 
        arn:aws:acm-pca:<region>:<your-acccount-number>:certificate-authority/57943599-30d2-8723-1234-1cb4b7d81128
 * In the AWS console browse to the AWS Certificate Manager service(ACM) . Under Private CA's you will see the private CA created and
   the status should show "Pending Certificate"
@@ -60,7 +60,7 @@ Run the python module named ***usecase-5-step-3.py***
   This is purely for demonstration purposes. In your organization you should store it in an HSM or a secure vault
 * You should see the following printed in the runner window pane below 
    * Success - Self signed certificate file ***self-signed-cert.pem*** created"
-   * "This self signed certificate will be used in the certificate chain of trust"
+   * This self signed certificate will be used in the certificate chain of trust
  
 <a><img src="images/pki-ca-hierarchy.png" width="800" height="600"></a><br>
 
@@ -142,6 +142,7 @@ Run the python module named ***usecase-5-step-8.py***
   pane below if you look through the printed log 
 
   ** curl: (60) Peer's Certificate issuer is not recognized **
+  
   ** Certificate is not trusted - cannot validate server certificate **
 
 **Some questions to think about :**
