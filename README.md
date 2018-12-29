@@ -111,7 +111,7 @@ Run the python module named ***usecase-6-step-5.py***
 * You should see the following printed in the runner window pane below 
    * Successfully imported signed cert and certificate chain into ACM
 
-<a><img src="images/private-ca-active-usecase-6.png" width="800" height="600"></a><br>
+<a><img src="images/private-ca-active-usecase-6.png" width="800" height="500"></a><br>
 
 ### Step 6 :
 
@@ -126,8 +126,9 @@ Run the python module named ***usecase-6-step-6.py***
 * After these steps alb.workshop.com is ready to serve content
 * You should see the following printed in the runner window pane below :
 
-**"Successfully attached a HTTPS listener to the ALB"**
-**"Successfully issued a private certificate for the private domain alb.workshop.com"**
+**Successfully attached a HTTPS listener to the ALB**
+
+**Successfully issued a private certificate for the private domain alb.workshop.com**
 
 ### Step 7 :
 
@@ -144,6 +145,7 @@ Run the python module named ***usecase-5-step-7.py***
   pane if you look through the printed log 
 
   ** curl: (60) Peer's certificate issuer has been marked as not trusted by the user. **
+  
   ** Certificate is not trusted - cannot validate server certificate **
 
 **Some questions to think about :**
@@ -163,7 +165,7 @@ Run the python module named **usecase-6-step-8.py**
   alb.workshop is trusted and successfully authenticated. You should see the following printed in the 
   runner window pane.
   
-  **The HTML that the lambd origin returns**
+  **The HTML that the lambda function behind the ALB returns**
   
   **Certificate is trusted and is valid**
 
