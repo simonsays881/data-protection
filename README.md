@@ -1,7 +1,8 @@
 ## ACM Private Certificate authority - Private certs for your webserver 
 
 This workshop demonstrates how ACM Private Certificate authority(PCA) can be created and made operational. It also helps you learn
-about how ACM PCA can be used to generate private certificates for your web applications that are not exposed to the public internet.
+about how ACM PCA can be used to generate private certificates for your devices or web servers. In this usecase you will generate a 
+CSR(certificate signing request) for your device or server and then get it signed by the AWS Certificate manager private CA 
 
 ## Let's look at some concepts :
 
@@ -22,10 +23,10 @@ Run the python module named ***intial-config-step-1.py***
 
 * First you will see **"Pending DynamoDB table creation for storing shared variables"** printed on the runner window pane below
 * Wait for about 45 seconds 
-* You should see **"shared_variables_crypto_builders DynamoDB table created"** printed on the runner window pane below
+* You should see **"shared_variables_crypto_builders DynamoDB table created"** printed 
 
 This module will create a DynamoDB table called **shared_variables_crypto_builders** . The primary purpose of this table is to share variables
-across the different python module that we will run in this usecase.
+across the different python modules that we will run in this usecase.
 
 ### Step 2 :
 
@@ -42,7 +43,7 @@ Run the python module named ***usecase-5-step-2.py***
 * In the AWS console browse to the AWS Certificate Manager service(ACM) . Under Private CA's you will see the private CA created and
   the status should show "Pending Certificate"
 
-<a><img src="images/private-ca-pending-cert.png" width="800" height="400"></a><br>
+<a><img src="images/private-ca-pending-cert.png" width="800" height="500"></a><br>
 
 **Some questions to think about :**
 
@@ -74,7 +75,7 @@ Run the python module named ***usecase-5-step-3.py***
 Run the python module named ***usecase-5-step-4.py***
 
 * This module gets a Certificate signing request(CSR) for the private certifiate authority with 
-  common name **reinvent.builder.subordinate** that was created in **Step 2**
+  common name **acmpcausecase5.subordinate** that was created in **Step 2**
 * The certificate signing request is signed using the self signed certificate and it's private key 
   that was created in **Step 3** 
 * The signed cert is stored in a pem file called ***signed_subordinate_ca_cert.pem***
@@ -86,9 +87,9 @@ Run the python module named ***usecase-5-step-4.py***
 Run the python module named ***usecase-5-step-5.py***
 
 * This module imports the subordinate CA signed certificate ***signed_subordinate_ca_cert.pem*** and 
-  certificate chain of trust into AWS Certificate Manager(ACM)
-* The certificate chain contains the self signed CA certificate that we created in **Step 3**
-* After this operation the subordinate privcate certificate authority(CA) changes status to ACTIVE. 
+  the certificate chain of trust into AWS Certificate Manager(ACM)
+* The certificate chain contains the self signed or root CA certificate that we created in **Step 3**
+* After this operation the subordinate private certificate authority(CA) changes status to ACTIVE. 
 * Browse to the ACM service within the AWS console and you should see the status of the subordiate CA with 
   common name **acmpcausecase5.subordinate** as ACTIVE as shown below
 * We are at a point where the subordinate private certificate authority(PCA) can issue private certificates
@@ -107,22 +108,21 @@ Run the python module named ***usecase-5-step-6.py***
 * This module takes about 2 minutes to complete 
 * This module creates a CSR for a webserver endpoint with common name ***127.0.0.1*** and the CSR is then
   passed to the issue_certificate API call which sends the CSR to AWS Certificate Manager and is signed
-  by the subordinate private certificate authority that was created earlier 
+  by the subordinate private certificate authority
 * The signed webserver endpoint certificate pem file is called ***"webserver_cert.pem"***
 * The issue_certificate API calls also returns the certificate chain of trust and the pem file that stores the
-  chain of trust is called ***"webserver_cert_chain.pem"***
+  certificate chain of trust is called ***"webserver_cert_chain.pem"***
 * You should see the following printed in the runner window pane below 
     * Successfully created server certificate ***webserver_cert.pem*** for the flask web server
     * Successfully created chain of trust ***webserver\_cert_chain.pem*** for the flask web server
-
 
 ### Step 7 :
 
 Run the python module named ***usecase-5-step-7.py***
 
-* This module creates a python flask web server with an HTML page that prints **"Hello World"**
+* This module creates a python flask web server 
 * The webserver is running within the Cloud9 environment and is exposed through the following
-  URL **https://127.0.0.1:5000/**
+  URL **https://127.0.0.1:5000/** on port 5000
 * You should see the following printed in the runner window pane below 
    * Running on https://127.0.0.1:5000/ 
 * For the next steps this webserver needs to keep running. So please don't kill the runner window pane tab
