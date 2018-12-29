@@ -8,6 +8,10 @@ a HTTPS connection
 
 <a><img src="images/acm-pca-usecase-6-arch.png" width="800" height="600"></a><br>
 
+The on-premise application in a data-center is for illustration purposes. We won't be deploying the 
+on-prem application for this usecase. Only the lambda function behind the application load balancer
+will be deployed
+
 ### Cloudformation templates for the setting up architecture for this usecase
 
 Please run the below cloudformation stack in your AWS account
