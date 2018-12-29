@@ -110,7 +110,7 @@ Run the python module named ***usecase-6-step-5.py***
 * You should see the following printed in the runner window pane below 
    * Successfully imported signed cert and certificate chain into ACM
 
-<a><img src="images/acm-pca-active.png" width="800" height="600"></a><br>
+<a><img src="images/private-ca-active-usecase-6.png" width="800" height="600"></a><br>
 
 ### Step 6 :
 
