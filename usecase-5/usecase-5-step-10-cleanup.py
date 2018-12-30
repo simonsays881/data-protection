@@ -38,7 +38,6 @@ def main():
         current_directory_path = os.path.dirname(os.path.realpath(__file__)) + '/'
         print "This step will take about 1 minute to complete\n"
 
-        
         self_signed_cert_filename_path = current_directory_path + 'self-signed-cert.pem'
         signed_subordinate_ca_cert_filename_path = current_directory_path + 'signed_subordinate_ca_cert.pem'
         webserver_cert_path = current_directory_path + 'webserver_cert.pem'
@@ -113,7 +112,7 @@ def main():
         ###################################################
         response = s3_client.list_buckets()
         for bucket_name in response['Buckets']:
-            if bucket_name['Name'].startswith('reinvent-builder-bucket-pca') or bucket_name['Name'].startswith('builder-acm-pca-usecase-5-bucket-pca-crl') :
+            if bucket_name['Name'].startswith('builder-acm-pca-usecase-5-bucket-pca-crl') :
                 try:
                     response = s3_client.get_bucket_tagging(
                         Bucket=bucket_name['Name']
