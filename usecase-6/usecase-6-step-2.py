@@ -47,7 +47,7 @@ def main():
         #   Also tag the bucket so that it can be associated with this builders session #
         #   for cleanup                                                                 #
         #################################################################################
-        crl_bucket_name = 'reinvent-builder-bucket-pca-crl' + str(random.randint(1, 100000))
+        crl_bucket_name = 'builder-acm-pca-usecase-6-bucket-pca-crl' + str(random.randint(1, 100000))
         # Doing the below because locationconstraint does not support all regions today
         if 'us-east' in region:
             s3_client.create_bucket(Bucket=crl_bucket_name)
