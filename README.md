@@ -5,9 +5,8 @@ These workshops demonstrates server side encryption, client side encryption and 
 * How do I put an object on S3 with server side encryption ?
 * How do I use aws encryption sdk to encrypt data in my application before sending the data to an AWS service ?
 * What is Data Key Caching ?
-* How I generate X.509 certificates with AWS Certificate Manager to enable TLS on my AWS infrastructure ?
+* How can I generate X.509 certificates with AWS Certificate Manager to enable TLS on my load balancer ?
 * How do I use AWS Certificate Manager to generate a private certificate authority ?
-* How do I generate a certificate for my webserver or device from an AWS Certificate Manager private certificate authority(PCA) ?
 
 Title | Description | Learning Time | Teaching Time With Discussion
 | :--- | :--- | :--- | :--- |
