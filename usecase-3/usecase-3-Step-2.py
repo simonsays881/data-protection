@@ -81,6 +81,8 @@ def main():
                     plaintext.write(chunk)
                     
         print "\nModule run was successful !!"
+        print "\nYou should see the client side encrypted file encrypted_e.txt !!"
+        print "\nYou should see the cycled file plaintext_u_cycled.txt !!"
         print "\n Step 2 completed successfully"
     except:
         print "Unexpected error:", sys.exc_info()[0]

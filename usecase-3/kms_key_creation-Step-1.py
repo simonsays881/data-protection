@@ -127,6 +127,7 @@ def main():
         )
         
         print "\n KMS Master Key with alias name kms_key_cse_usecase_3 successfully created"
+        print "\n In the KMS console you should see the key with the alias kms_key_cse_usecase_3"
         print "\n Step 1 completed successfully"
     except:
         print "Unexpected error:", sys.exc_info()[0]
