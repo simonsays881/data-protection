@@ -22,7 +22,23 @@ def main():
         ddb_client = boto3.client('dynamodb', region)
         elbv2_client = boto3.client('elbv2', region)
         lambda_client = boto3.client('lambda', region)
-
+        
+        cf_client = boto3.client('cloudformation',region)
+        response = cf_client.list_stacks(
+            StackStatusFilter=[
+                'CREATE_COMPLETE',
+            ]
+        )
+        
+        cfstacksetup = False
+        for stack in response['StackSummaries']:
+            if stack['StackName'] == 'acm-pca-usecase-6':
+                cfstacksetup = True
+                
+        if cfstacksetup == False:
+            print "\nPlease execute the Cloudformation stack acm-pca-usecase-6 for this usecase from the git repository before going through this workshop"
+            exit(0)
+            
         # Create DynamoDB table for storing shared variables across python modules
         try:
             ddb_client.describe_table(TableName='shared_variables_crypto_builders_usecase_6')

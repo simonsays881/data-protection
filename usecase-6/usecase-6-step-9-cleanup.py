@@ -8,6 +8,8 @@
 #                                                                             #
 #  3. All the files created in the filesystem is deleted                      #
 #                                                                             #
+#  4. CF stack acm-pca-usecase-6 is deleted                                   #
+#                                                                             #
 ###############################################################################
 """
 import os
@@ -40,7 +42,6 @@ def main():
         current_directory_path = os.path.dirname(os.path.realpath(__file__)) + '/'
         print "\nThis step takes about 45 seconds to complete \n"
 
-        
         self_signed_cert_filename_path = current_directory_path + 'self-signed-cert.pem'
         signed_subordinate_ca_cert_filename_path = current_directory_path + 'signed_subordinate_ca_cert.pem'
         cert_chain_path = current_directory_path + 'cert_chain.pem'
@@ -190,17 +191,26 @@ def main():
         except:
             print "No private certificates for the private domain alb.workshop.com mapping to the ALB"
 
-        # #####################################################################################################################################
-        # #  Cleanup the cloudformation template as well
-        # #####################################################################################################################################
-        cf_client = boto3.client('cloudformation')
-        response = cf_client.delete_stack(
-            StackName='acm-pca-usecase-6'
+        ###########################################
+        #  Cleanup the cloudformation template    #
+        ###########################################
+        cf_client = boto3.client('cloudformation',region)
+        response = cf_client.list_stacks(
+            StackStatusFilter=[
+                'CREATE_COMPLETE',
+            ]
         )
-        print "\nDeleting Cloudformation stack created for this usecase .It takes about 3 minutes for the CF stack to be deleted"
         
+        for stack in response['StackSummaries']:
+            if stack['StackName'] == 'acm-pca-usecase-6':
+                response = cf_client.delete_stack(
+                    StackName='acm-pca-usecase-6',
+                )
+        
+        print "\nDeleting Cloudformation stack created for this usecase has been initiated .It takes about 3 minutes for the CF stack to be deleted"
         print "\nEverything cleaned up ,you are all good !!\n"
         print "\nStep-9 cleanup has been successfully completed \n"
+        print "\nif you plan to re-run this usecase after cleanup please wait until the CF stack named acm-pca-usecase-6 has been deleted \n"
     
     except:
         print "Unexpected error:", sys.exc_info()[0]
