@@ -120,6 +120,7 @@ def main():
     
         print "\n Cleanup Successful" 
         print "\n Step 4 completed successfully"
+        print "\n If you want to re-run this usecase please wait until the cloudformation stack named data-protection-cse has been deleted"
      
     except:
         print "Unexpected error:", sys.exc_info()[0]
