@@ -17,6 +17,7 @@ def main():
     #######################################################
     """
     try:
+        print "\n This step takes about 10 seconds to complete"
         az = subprocess.check_output(['curl', '-s', 'http://169.254.169.254/latest/meta-data/placement/availability-zone'])
         list_az = az.split('-')
         region = list_az[0]+ '-' + list_az[1] + '-' + list_az[2][0]
