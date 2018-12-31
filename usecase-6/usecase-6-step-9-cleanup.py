@@ -51,7 +51,7 @@ def main():
         if Path(signed_subordinate_ca_cert_filename_path).exists():
             os.remove(signed_subordinate_ca_cert_filename_path)
     
-        if Path(webserver_cert_chain_path).exists():
+        if Path(cert_chain_path).exists():
             os.remove(cert_chain_path)    
        
         ##########################################
