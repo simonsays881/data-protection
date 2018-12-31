@@ -193,7 +193,8 @@ def main():
         # #####################################################################################################################################
         # #  Cleanup the cloudformation template as well
         # #####################################################################################################################################
-        response = client.delete_stack(
+        cf_client = boto3.client('cloudformation')
+        response = cf_client.delete_stack(
             StackName='acm-pca-usecase-6'
         )
         print "\nDeleting Cloudformation stack created for this usecase .It takes about 3 minutes for the CF stack to be deleted"
