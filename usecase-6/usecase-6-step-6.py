@@ -61,7 +61,7 @@ def main():
         certificate_arn = response['CertificateArn']
       
         print "Attaching HTTPS listener to ALB and requesting certificate for the private domain alb.workshop.com\n"
-        print "This step takes about 1 minute to complete\n"
+        print "This step takes about 20 seconds to complete\n"
 
         # It takes some time to create the certificate and for the certificate to be active , hence the sleep in the code
         time.sleep(5)
