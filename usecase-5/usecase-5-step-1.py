@@ -58,7 +58,7 @@ def main():
             )
             
             print "Pending DynamoDB table creation for storing shared variables"
-            print "This step will take about 30 seconds to complete"
+            print "\nThis step will take about 30 seconds to complete"
             waiter = ddb_client.get_waiter('table_exists')
             waiter.wait(TableName='shared_variables_crypto_builders')
             ddb_client.put_item(TableName='shared_variables_crypto_builders', \

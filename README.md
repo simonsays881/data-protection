@@ -19,7 +19,7 @@ Once you run the command above you will see a folder called **usecase-5** in the
 
 ### Step 1 :
 
-Run the python module named ***intial-config-step-1.py***
+Run the python module named ***usecase-5-step-1.py***
 
 * First you will see **Pending DynamoDB table creation for storing shared variables** printed on the runner window pane below
 * Wait for about 45 seconds 
