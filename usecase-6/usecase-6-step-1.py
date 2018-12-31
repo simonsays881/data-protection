@@ -92,7 +92,7 @@ def main():
             cloud9_instance_id = subprocess.check_output(['curl', '-s', 'http://169.254.169.254/latest/meta-data/instance-id'])
             vpc_mac_id = subprocess.check_output(['curl', '-s', 'http://169.254.169.254/latest/meta-data/network/interfaces/macs/'])
             vpc_id = subprocess.check_output(['curl', '-s', 'http://169.254.169.254/latest/meta-data/network/interfaces/macs/'+ vpc_mac_id + 'vpc-id'])
-            print vpc_id
+            #print vpc_id
             ec2 = boto3.resource('ec2',region)
             instance = ec2.Instance(cloud9_instance_id)
             
@@ -121,7 +121,7 @@ def main():
             
             default_sg = response['SecurityGroups'][0]
             all_sg_ids.append(default_sg['GroupId'])    
-            print all_sg_ids
+            #print all_sg_ids
                 
             ##############################################################################################
             #  Assign the security group ID list to the cloud9 environment ec2 instance. this list would #
