@@ -12,7 +12,7 @@ CSR(certificate signing request) for your device or server and then get it signe
 
 ## Let's do some private cert generaton with AWS Certificate Manager(ACM) private certificate authority(PCA) :
 
-Open the Cloud9 IDE environment called **workshop-environment**. Within the Cloud9 IDE open the bash terminal and use the following command to checkout code for this usecase :
+Open the Cloud9 IDE environment called **workshop-environment**. Within the Cloud9 IDE open the bash terminal and change the working directory to **data-protection ** and use the following command to checkout code for this usecase :
 
 **git checkout acm-pca-usecase-5**
 
