@@ -34,7 +34,7 @@ def main():
                     print "\nStep 3 completed successfully"
                     gendatakey= True
                     
-        if gendatakey == False          
+        if gendatakey == False:          
             print "\n Re-run this usecase until the GenerateDataKey API Called print appears"
     except:
         print "Unexpected error:", sys.exc_info()[0]
