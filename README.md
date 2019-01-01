@@ -24,7 +24,7 @@ The above stack creates the necessary services to build out the AWS architecture
 
 ## Let's do some private cert generaton for a private domain with AWS Certificate Manager(ACM) private certificate authority(PCA) :
 
-Open the Cloud9 IDE environment called **workshop-environment**. Within the Cloud9 IDE open the bash terminal and use the following command to checkout code for this usecase :
+Open the Cloud9 IDE environment called **workshop-environment**. Within the Cloud9 IDE open the bash terminal and change the working directory to **data-protection ** and use the following command to checkout code for this usecase :
 
 **git checkout acm-pca-usecase-6**
 
