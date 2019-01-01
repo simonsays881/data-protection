@@ -19,7 +19,7 @@ The above stack creates a cloudwatch event rule used for this workshop to analyz
 
 ## Let's do some client side encryption
 
-Open the Cloud9 IDE environment called **workshop-environment**. Within the Cloud9 IDE, open the bash terminal and use the following command to checkout code for this usecase :
+Open the Cloud9 IDE environment called **workshop-environment**. Within the Cloud9 IDE open the bash terminal and change the working directory to **data-protection ** and use the following command to checkout code for this usecase :
 
 **git checkout kms-cse-usecase-3**
 
