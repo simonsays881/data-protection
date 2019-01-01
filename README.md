@@ -4,9 +4,9 @@ This workshop demonstrates client side encryption
 
 ## Let's look at some concepts :
 
-<a><img src="images/client-side-encryption.png" width="800" height="600"></a><br>
+<a><img src="images/client-side-encryption.png" width="700" height="500"></a><br>
 
-<a><img src="images/client-side-encryption-sdk.png" width="800" height="600"></a><br>
+<a><img src="images/client-side-encryption-sdk.png" width="700" height="500"></a><br>
 
 ### Let's setup the Cloudformation stack required for this workshop :
 
