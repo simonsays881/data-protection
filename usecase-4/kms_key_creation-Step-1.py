@@ -19,6 +19,23 @@ def main():
         list_az = az.split('-')
         region = list_az[0]+ '-' + list_az[1] + '-' + list_az[2][0]
         kms_client = boto3.client('kms', region)
+        
+        # Checking if the CF stack pre-req has been satisfied, if not exit
+        cf_client = boto3.client('cloudformation',region)
+        response = cf_client.list_stacks(
+            StackStatusFilter=[
+                'CREATE_COMPLETE',
+            ]
+        )
+        
+        cfstacksetup = False
+        for stack in response['StackSummaries']:
+            if stack['StackName'] == 'data-protection-cse-datakey-caching':
+                cfstacksetup = True
+                
+        if cfstacksetup == False:
+            print "\nPlease execute the Cloudformation stack data-protection-cse-datakey-caching for this usecase from the git repository before going through this workshop"
+            exit(0)
    
         account_num = boto3.client('sts').get_caller_identity().get('Account')
     
