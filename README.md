@@ -21,7 +21,8 @@ Once you run the command above you will see a folder called **usecase-1** in the
 Run the module named **kms_key_creation.py**
 
 This module will create a KMS master key with the key alias **kms_key_sse_usecase_1** . In the following steps we will refer to this
-master key using the alias.
+master key using the alias. Browse to the KMS console and you should find the key alias **kms_key_sse_usecase_1** under 
+customer managed keys
 
 ### Step 2 :
 
