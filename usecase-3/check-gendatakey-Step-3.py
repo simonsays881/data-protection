@@ -27,10 +27,15 @@ def main():
                 response = s3_client.get_bucket_tagging(
                     Bucket=bucket_name
                 )
-        
+                
+                gendatakey = False
                 if response['TagSet'][0]['Value'] == 'usecase-3-cse':
                     print "GenerateDataKey API Called"
-        print "\n Step 3 completed successfully"
+                    print "\nStep 3 completed successfully"
+                    gendatakey= True
+                    
+        if gendatakey == False          
+            print "\n Re-run this usecase until the GenerateDataKey API Called print appears"
     except:
         print "Unexpected error:", sys.exc_info()[0]
         raise
