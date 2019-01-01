@@ -6,8 +6,9 @@ CSR(certificate signing request) for your device or server and then get it signe
 
 ## Let's look at some concepts :
 
-<a><img src="images/acm-pca-vs-public-ca.png" width="800" height="600"></a><br>
-<a><img src="images/acm-pca-functionality.png" width="800" height="600"></a><br>
+<a><img src="images/acm-pca-vs-public-ca.png" width="700" height="500"></a><br>
+
+<a><img src="images/acm-pca-functionality.png" width="700" height="500"></a><br>
 
 ## Let's do some private cert generaton with AWS Certificate Manager(ACM) private certificate authority(PCA) :
 
