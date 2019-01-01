@@ -86,6 +86,9 @@ def main():
             f.write(response['Body'].read())
             
         print "\nModule run was successful !!"
+        print "\nplaintext_u.txt was successfully uploaded to S3,server side encrypted and stored as encrypted_e.txt!!"
+        
+        
     except:
         print "Unexpected error:", sys.exc_info()[0]
         raise
