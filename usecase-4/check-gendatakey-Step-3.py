@@ -27,12 +27,16 @@ def main():
                 response = s3_client.get_bucket_tagging(
                     Bucket=bucket_name
                 )
-        
+                
+                gendatakey = False
                 if response['TagSet'][0]['Value'] == 'usecase-4-cse':
                     print "GenerateDataKey API Called\n"
                     print "Eventhough plaintext_u.txt file was encrypted twice only one GenerateDataKey API call was made."
                     print "This is because the data key was cached"
-        print "\n Step 3 completed successfully"
+                    gendatakey= True
+        
+        if gendatakey == False             
+            print "\n Step 3 completed successfully"
     except:
         print "Unexpected error:", sys.exc_info()[0]
         raise
