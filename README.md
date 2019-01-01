@@ -10,7 +10,7 @@ This workshop demonstrates server side encryption using AWS KMS and S3
 
 ## Let's do some server side encryption
 
-Open the Cloud9 IDE environment called **workshop-environment**. Within the Cloud9 IDE open the bash terminal change the working directory to **data-protection** and use the following command to checkout code for this usecase :
+Open the Cloud9 IDE environment called **workshop-environment**. Within the Cloud9 IDE open the bash terminal and change the working directory to **data-protection** and use the following command to checkout code for this usecase :
 
 **git checkout kms-sse-usecase-1**
 
