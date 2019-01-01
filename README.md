@@ -31,6 +31,8 @@ Once you run the command above you will see a folder called **usecase-3** in the
 * You should see **"KMS Master Key with alias name kms_key_cse_usecase_3 successfully created"** printed
   in the runner window pane below.
 * This python module will create a KMS master key with the key alias **kms_key_cse_usecase_3** 
+* Browse to the KMS console and you should find the key alias **kms_key_cse_usecase_3** under 
+  customer managed keys
 
 ### Step 2 :
 
