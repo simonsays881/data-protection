@@ -14,7 +14,7 @@ The below workshops will added to this repo as they become available
 <body>
 
 <kbd>
-<img src="images/coming-soon.png" width="480" height="320" title="Coming Soon">
+<img src="images/coming-soon.png" width="700" height="500" title="Coming Soon">
 </kbd>
 <br>
 
