@@ -8,6 +8,7 @@ This workshop demonstrates client side encryption
 
 <a><img src="images/client-side-encryption-sdk.png" width="700" height="500"></a><br>
 
+
 ### Let's setup the Cloudformation stack required for this workshop :
 
 [![Deploy Client Side Encryption CloudFormation Stack](images/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?#/stacks/new?stackName=data-protection-cse&templateURL=https://s3.amazonaws.com/crypto-workshop-dont-delete/template-cse.yaml)
