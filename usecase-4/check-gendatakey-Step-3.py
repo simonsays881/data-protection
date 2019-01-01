@@ -33,10 +33,11 @@ def main():
                     print "GenerateDataKey API Called\n"
                     print "Eventhough plaintext_u.txt file was encrypted twice only one GenerateDataKey API call was made."
                     print "This is because the data key was cached"
+                    print "\n Step 3 completed successfully"
                     gendatakey= True
         
         if gendatakey == False:             
-            print "\n Step 3 completed successfully"
+            print "\n Re-run this usecase until you see the print GenerateDataKey API Called"
     except:
         print "Unexpected error:", sys.exc_info()[0]
         raise
