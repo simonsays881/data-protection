@@ -35,7 +35,7 @@ def main():
                     print "This is because the data key was cached"
                     gendatakey= True
         
-        if gendatakey == False             
+        if gendatakey == False:             
             print "\n Step 3 completed successfully"
     except:
         print "Unexpected error:", sys.exc_info()[0]
