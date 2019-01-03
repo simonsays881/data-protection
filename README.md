@@ -27,7 +27,7 @@ Once you run the command above you will see a folder called **usecase-3** in the
 
 ### Step 1 :
 
-* Run the module named **kms_key_creation.py**
+* Run the module named **kms_key_creation-Step-1.py**
 * You should see **"KMS Master Key with alias name kms_key_cse_usecase_3 successfully created"** printed
   in the runner window pane below.
 * This python module will create a KMS master key with the key alias **kms_key_cse_usecase_3** 
@@ -37,8 +37,8 @@ Once you run the command above you will see a folder called **usecase-3** in the
 ### Step 2 :
 
 * You will find a file called ***plaintext_u.txt*** which is the plaintext unencrypted file
-* Run the **usecase-3.py** python module . The runner pane should print **"Module run was successful !!"**
-* The module **usecase-3.py** encrypts the ***plaintext_u.txt*** file
+* Run the **usecase-3-Step-2.py** python module . The runner pane should print **"Module run was successful !!"**
+* The module **usecase-3-Step-2.py** encrypts the ***plaintext_u.txt*** file
 * The encrypted file is created and is called ***encrypted_e.txt***
 * You should see **"Module run was successful"** printed in the runner window pane below
 
@@ -55,19 +55,19 @@ Once you run the command above you will see a folder called **usecase-3** in the
 ### Step 5 :
 
 * Wait for 2 minutes
-* Run the **check-gendatakey.py** python module
-* The **check-gendatakey.py** is checking for whether a GenerateDataKey API call was logged by cloudtrail
+* Run the **check-gendatakey-Step-3.py** python module
+* The **check-gendatakey-Step-3.py** is checking for whether a GenerateDataKey API call was logged by cloudtrail
   and this event was then sent to a cloudwatch event rule.
 * If all things go well, you should see **"GenerateDataKey API Called"** in the runner window below. If you don'things
   see this print wait for a minute and try again
 
 ### Step 6 :
 
-* Run **usecase-3-cleanup.py** python module 
+* Run **usecase-3-cleanup-Step-4.py** python module 
 * You should see **Cleanup Successful** printed in the runner window pane below
-* This modules deletes the kms key and it's alias that we created in **kms_key_creation.py**
+* This modules deletes the kms key and it's alias that we created in **kms_key_creation-Step-1.py**
   .It also deletes all the files that were created in the **usecase-3** folder
-* Please remember that every time you run **usecase-3-cleanup.py** ,if you want to re-run this uecase,
+* Please remember that every time you run **usecase-3-cleanup-Step-4.py** ,if you want to re-run this uecase,
   you will have to start from **Step 1**
 
 ### Some questions to think about :
