@@ -28,7 +28,7 @@ def main():
         bucket_name = 'reinvent-builder-bucket' + str(random.randint(1, 100000))
         
         # Doing the below because locationconstraint does not support all regions today
-        if 'us-east' in region:
+        if 'us-east-1' in region:
             s3_client.create_bucket(Bucket=bucket_name)
         else:
             s3_client.create_bucket(
