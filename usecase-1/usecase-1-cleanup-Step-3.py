@@ -87,6 +87,7 @@ def main():
             )
     
         print "\n Cleanup Successful" 
+        print "\n Step 3 cleanup completed successfully"
     except:
         print "Unexpected error:", sys.exc_info()[0]
         raise

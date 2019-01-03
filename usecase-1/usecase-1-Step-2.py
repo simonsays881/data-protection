@@ -87,6 +87,7 @@ def main():
             
         print "\nModule run was successful !!"
         print "\nplaintext_u.txt was successfully uploaded to S3,server side encrypted and stored as encrypted_e.txt!!"
+        print "\n Step 2 completed successfully"
         
         
     except:
