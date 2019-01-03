@@ -28,7 +28,7 @@ customer managed keys
 
 * You will find a file called ***plaintext_u.txt*** which is the plaintext unencrypted file
 * Run the **usecase-1-Step-2.py** python module
-* The module **usecase-1-Step-2.py** uploads the ***plaintext_u.text*** file to an S3 bucket named reinvent-builderXXXX 
+* The module **usecase-1-Step-2.py** uploads the ***plaintext_u.txt*** file to an S3 bucket named reinvent-builderXXXX 
 * Before the file is stored on S3 it is server side encrypted using the KMS key alias *kms_key_sse_usecase_1*
 
 ### Step 3 :
@@ -36,14 +36,14 @@ customer managed keys
 * In the AWS console,navigate to the S3 service
 * Look for the bucket named reinvent-builderXXXX
 * In the bucket there would be a file called    .This file was encrypted using a Data key under the KMS master key **key_sse_usecase_1**
-* Take a look at the properties of the file ***encrypted_e.text***.You will find that it's encrypted using AWS-KMS as shown in the picture below
+* Take a look at the properties of the file ***encrypted_e.txt***.You will find that it's encrypted using AWS-KMS as shown in the picture below
 
 <a><img src="images/in-aws-console-sse.png" width="400" height="200"></a><br>
 
 ### Step 4 :
 
-* The **usecase-1-Step-2.py** python module does a S3 getobject API Call on ***encrypted_e.text***
-* The ***encrypted_e.text*** file is decrypted on the S3 service and over TLS gets delivered to this environment
+* The **usecase-1-Step-2.py** python module does a S3 getobject API Call on ***encrypted_e.txt***
+* The ***encrypted_e.txt*** file is decrypted on the S3 service and over TLS gets delivered to this environment
 * In the folder **usecase-1** ,you should see a file called ***plaintext_cycled_u.txt*** 
 * Check whether the contents of ***plaintext_u.txt*** and ***plaintext_u_cycled.txt*** is the same 
 
