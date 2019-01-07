@@ -37,7 +37,8 @@ def main():
                     'LocationConstraint': region
                 }
             )
-        
+        waiter = s3_client.get_waiter('bucket_exists')
+        waiter.wait(Bucket=crl_bucket_name)
         response = s3_client.put_bucket_tagging(
             Bucket=bucket_name,
             Tagging={
