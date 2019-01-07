@@ -90,6 +90,7 @@ def main():
             Bucket=crl_bucket_name,
             Policy=json.dumps(crl_bucket_policy)
         )
+        time.sleep(1)
         
        #######################################################################################
        #   Creates the subordinate private certificate authority in AWS Certificate Manager  #
