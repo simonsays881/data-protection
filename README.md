@@ -38,10 +38,10 @@ Run the python module named ***usecase-6-step-1.py***
 * This step takes about 30 seconds to complete
 * You should see the following printed in the runner window pane below
 
-**"shared_variables_crypto_builders DynamoDB table created"** 
+**"shared_variables_crypto_builders_usecase_6 DynamoDB table created"** 
 **"Lambda targets for the ALB successfully registered"**
 
-This module will create a DynamoDB table called **shared_variables_crypto_builders** . The primary purpose of this table is to share variables
+This module will create a DynamoDB table called **shared_variables_crypto_builders_usecase_6** . The primary purpose of this table is to share variables
 across the different python modules that we will run in this usecase. The lambda function that was created in the CF template is registered as
 a target for the Application load balancer
 
