@@ -38,6 +38,8 @@ def main():
         
         if gendatakey == False:             
             print "\n Re-run this usecase until you see the print GenerateDataKey API Called"
+            print "\n The GenerateDataKey API call for the key alias kms_key_cse_usecase_4 that you created in Step 1"
+            print "\n is being monitored using a CloudWatch event"
     except:
         print "Unexpected error:", sys.exc_info()[0]
         raise
