@@ -178,6 +178,7 @@ def main():
         except:
             print "No Target group found for the ALB to delete and clean up !!"
         
+        time.sleep(20)
         # Deleting the certificates created for the HTTPS listener of the ALB
         try:
             response = acm_client.describe_certificate(
