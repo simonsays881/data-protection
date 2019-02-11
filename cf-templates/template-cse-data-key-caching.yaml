@@ -22,7 +22,7 @@ Resources:
                   - "kms.amazonaws.com"
                eventName: 
                   - "GenerateDataKey"
-         Name: 'crypto-builder-cse-cw-rule'
+         Name: 'crypto-builder-cse-cw-rule-usecase-4'
          State: "ENABLED"
          Targets:
             - 
