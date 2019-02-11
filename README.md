@@ -25,11 +25,11 @@ Once you run the command above you will see a folder called **usecase-4** in the
 
 ### Step 1 :
 
-* Run the module named **kms_key_creation-Step-1.py**
+* Run the module named **kms_key_creation-Step-1.py** in the folder **usecase-4**
 * You should see **"KMS Master Key with alias name kms_key_cse_usecase_4 successfully created"** printed
   in the runner window pane below.
 * This python module will create a KMS master key with the key alias **kms_key_cse_usecase_4** 
-* Browse to the KMS console and you should find the key alias **kms_key_sse_usecase_4** under 
+* Browse to the KMS console and you should find the key alias **kms_key_cse_usecase_4** under 
   customer managed keys
 
 ### Step 2 :
