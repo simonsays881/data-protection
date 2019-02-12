@@ -29,7 +29,6 @@ def main():
         
         for bucket_name in response['Buckets']:
             if bucket_name['Name'].startswith('data-protection-env-setup'):
-                print bucket_name['Name']
                 try:
                     response = s3_client.get_bucket_tagging(
                         Bucket=bucket_name['Name']
