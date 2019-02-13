@@ -51,11 +51,17 @@ def main():
         )
         
         for stack in response['StackSummaries']:
+            if stack['StackName'] == 'data-protection-cse':
+                response = cf_client.delete_stack(
+                    StackName='data-protection-cse',
+                )
+                
             if stack['StackName'] == 'data-protection-env-setup':
                 response = cf_client.delete_stack(
                     StackName='data-protection-env-setup',
                 )
                 
+            
         print "\n Final Cleanup initiated - you can close this browser tab" 
     except:
         print "Unexpected error:", sys.exc_info()[0]
