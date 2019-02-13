@@ -195,23 +195,23 @@ def main():
         ###########################################
         #  Cleanup the cloudformation template    #
         ###########################################
-        cf_client = boto3.client('cloudformation',region)
-        response = cf_client.list_stacks(
-            StackStatusFilter=[
-                'CREATE_COMPLETE',
-            ]
-        )
+        # cf_client = boto3.client('cloudformation',region)
+        # response = cf_client.list_stacks(
+        #     StackStatusFilter=[
+        #         'CREATE_COMPLETE',
+        #     ]
+        # )
         
-        for stack in response['StackSummaries']:
-            if stack['StackName'] == 'acm-pca-usecase-6':
-                response = cf_client.delete_stack(
-                    StackName='acm-pca-usecase-6',
-                )
+        # for stack in response['StackSummaries']:
+        #     if stack['StackName'] == 'acm-pca-usecase-6':
+        #         response = cf_client.delete_stack(
+        #             StackName='acm-pca-usecase-6',
+        #         )
         
         print "\nDeleting Cloudformation stack created for this usecase has been initiated .It takes about 3 minutes for the CF stack to be deleted"
         print "\nEverything cleaned up ,you are all good !!\n"
         print "\nStep-9 cleanup has been successfully completed \n"
-        print "\nif you plan to re-run this usecase after cleanup please wait until the CF stack named acm-pca-usecase-6 has been deleted \n"
+        # print "\nif you plan to re-run this usecase after cleanup please wait until the CF stack named acm-pca-usecase-6 has been deleted \n"
     
     except:
         print "Unexpected error:", sys.exc_info()[0]
