@@ -29,8 +29,6 @@ Resources:
                Arn: !GetAtt cryptocselambdawithkeycaching.Arn
                Id: "cw-rule-cse"
                
-   # Create a cloud9 environment 
-
 # Create the lambda function used for client side encryption usecase
 # This is mainly for studying GenerateDataKey calls that happen during client
 # side encryption with data key caching and without data key caching
@@ -71,7 +69,7 @@ Resources:
                    
                    whatfor_value = event['detail']['requestParameters']['encryptionContext']['whatfor']
                    
-                   bucket_name = 'reinvent-builder-bucket-cw-event' + str(random.randint(1, 100000))
+                   bucket_name = 'reinvent-builder-bucket-cw-event-usecase-4' + str(random.randint(1, 100000))
                    # Doing the below because locationconstraint does not support all regions today
                    if 'us-east-1' in region:
                         s3_client.create_bucket(Bucket=bucket_name)

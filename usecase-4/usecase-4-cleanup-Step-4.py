@@ -58,7 +58,7 @@ def main():
         # Delete the objects and buckets that were created as part of usecase-1
         response = s3_client.list_buckets()
         for bucket_name in response['Buckets']:
-            if bucket_name['Name'].startswith('reinvent-builder') or bucket_name['Name'].startswith('reinvent-builder-bucket-cw-event'):
+            if bucket_name['Name'].startswith('reinvent-builder') or bucket_name['Name'].startswith('reinvent-builder-bucket-cw-event-usecase-4'):
                 try:
                     response = s3_client.get_bucket_tagging(
                         Bucket=bucket_name['Name']
