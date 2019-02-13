@@ -106,21 +106,21 @@ def main():
         # Cleanup the cloudformation stack 
         cf_client = boto3.client('cloudformation',region)
         
-        response = cf_client.list_stacks(
-            StackStatusFilter=[
-                'CREATE_COMPLETE',
-            ]
-        )
+        # response = cf_client.list_stacks(
+        #     StackStatusFilter=[
+        #         'CREATE_COMPLETE',
+        #     ]
+        # )
         
-        for stack in response['StackSummaries']:
-            if stack['StackName'] == 'data-protection-cse':
-                response = cf_client.delete_stack(
-                    StackName='data-protection-cse',
-                )
+        # for stack in response['StackSummaries']:
+        #     if stack['StackName'] == 'data-protection-cse':
+        #         response = cf_client.delete_stack(
+        #             StackName='data-protection-cse',
+        #         )
     
         print "\n Cleanup Successful" 
         print "\n Step 4 completed successfully"
-        print "\n If you want to re-run this usecase please wait until the cloudformation stack named data-protection-cse has been deleted"
+        #print "\n If you want to re-run this usecase please wait until the cloudformation stack named data-protection-cse has been deleted"
      
     except:
         print "Unexpected error:", sys.exc_info()[0]
