@@ -51,6 +51,11 @@ def main():
         )
         
         for stack in response['StackSummaries']:
+            if stack['StackName'] == 'data-protection-cse-datakey-caching':
+                response = cf_client.delete_stack(
+                    StackName='data-protection-cse-datakey-caching',
+                )
+                
             if stack['StackName'] == 'data-protection-cse':
                 response = cf_client.delete_stack(
                     StackName='data-protection-cse',
