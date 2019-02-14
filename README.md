@@ -165,7 +165,11 @@ Run the python module named **usecase-5-step-9.py**
   
   **Certificate is trusted and is valid**
   
+### Step 9 :
 
+Run the python module named **usecase-5-step-10-cleanup.py**
+
+* This module cleans up all the resources that were created as part of this usecase
 
 
 
