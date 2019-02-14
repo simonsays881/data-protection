@@ -180,7 +180,6 @@ Run the python module named ***usecase-6-step-9-cleanup.py***
 This is the step for cleaning up all the resources that were created for the **acm-pca-usecase-6**
 
 * This module cleans up all the local files, S3 buckets, target groups,listeners that was created in the python modules for this usecase.
-* In addition the cloudformation stack that was setup for this usecase is also deleted
 * You should see the following printed in the runner window pane.
 
 **Everything cleaned up ,you are all good !!**
