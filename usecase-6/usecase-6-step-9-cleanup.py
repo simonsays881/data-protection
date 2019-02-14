@@ -208,7 +208,7 @@ def main():
         #             StackName='acm-pca-usecase-6',
         #         )
         
-        print "\nDeleting Cloudformation stack created for this usecase has been initiated .It takes about 3 minutes for the CF stack to be deleted"
+        #print "\nDeleting Cloudformation stack created for this usecase has been initiated .It takes about 3 minutes for the CF stack to be deleted"
         print "\nEverything cleaned up ,you are all good !!\n"
         print "\nStep-9 cleanup has been successfully completed \n"
         # print "\nif you plan to re-run this usecase after cleanup please wait until the CF stack named acm-pca-usecase-6 has been deleted \n"
