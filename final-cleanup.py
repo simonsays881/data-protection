@@ -69,7 +69,7 @@ def main():
             if stack['StackName'] == 'data-protection-cse':
                 print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-cse'])
                 
-            time.sleep(120)
+            time.sleep(10)
                 
             if stack['StackName'] == 'data-protection-env-setup':
                 print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-env-setup'])
