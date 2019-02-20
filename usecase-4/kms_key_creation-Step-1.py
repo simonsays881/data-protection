@@ -57,7 +57,6 @@ def main():
              "Effect": "Allow",
              "Principal": {
                "AWS": [
-                 "arn:aws:iam::" + account_num + ":user/builder",
                  "arn:aws:iam::" + account_num + ":role/cryptobuildercloudninerole"
                ]
              },
@@ -84,7 +83,6 @@ def main():
              "Effect": "Allow",
              "Principal": {
                "AWS": [
-                 "arn:aws:iam::" + account_num + ":user/builder",
                  "arn:aws:iam::" + account_num + ":role/cryptobuildercloudninerole"
                ]
              },
@@ -102,7 +100,6 @@ def main():
              "Effect": "Allow",
              "Principal": {
                "AWS": [
-                 "arn:aws:iam::" + account_num + ":user/builder",
                  "arn:aws:iam::" + account_num + ":role/cryptobuildercloudninerole"
                ]
              },
