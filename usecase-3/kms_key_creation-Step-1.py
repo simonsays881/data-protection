@@ -34,7 +34,11 @@ def main():
                 cfstacksetup = True
                 
         if cfstacksetup == False:
-            print "\nPlease execute the Cloudformation stack data-protection-cse for this usecase from the git repository before going through this workshop"
+            print "\nThe Cloudformation stack data-protection-cse required for this usecase has not been created"
+            print "\nPlease execute the following steps:\n"
+            print "1. execute the command git checkout master\n"
+            print "2. Run the python module cf-setup.py \n"
+            print "If you have already run cf-setup.py, please wait for the cloudformation stack creation to complete\n"
             exit(0)
    
         account_num = boto3.client('sts').get_caller_identity().get('Account')
