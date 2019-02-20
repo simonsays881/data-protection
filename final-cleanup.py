@@ -10,6 +10,7 @@ import os
 import json
 import boto3
 import time 
+import subprocess
 
 def main():
     """
@@ -48,36 +49,31 @@ def main():
                 except:
                     pass
         
-        # Remove Cloudformation stacks        
+        
+        
+        # # Remove Cloudformation stacks        
         response = cf_client.list_stacks(
             StackStatusFilter=[
                 'CREATE_COMPLETE',
             ]
         )
+        #print response
         
         for stack in response['StackSummaries']:
             if stack['StackName'] == 'acm-pca-usecase-6':
-                response = cf_client.delete_stack(
-                    StackName='acm-pca-usecase-6',
-                )
+                print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','acm-pca-usecase-6'])
                 
             if stack['StackName'] == 'data-protection-cse-datakey-caching':
-                response = cf_client.delete_stack(
-                    StackName='data-protection-cse-datakey-caching',
-                )
+                print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-cse-datakey-caching'])
                 
             if stack['StackName'] == 'data-protection-cse':
-                response = cf_client.delete_stack(
-                    StackName='data-protection-cse',
-                )
+                print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-cse'])
                 
-            time.sleep(300)
+            time.sleep(120)
                 
             if stack['StackName'] == 'data-protection-env-setup':
-                response = cf_client.delete_stack(
-                    StackName='data-protection-env-setup'
-                )
-                
+                print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-env-setup'])
+    
         print "\n Final Cleanup initiated - you can close this browser tab" 
     except:
         print "Unexpected error:", sys.exc_info()[0]
