@@ -42,7 +42,7 @@ def main():
                                 s3_bucket = s3_resource.Bucket(bucket_name['Name'])
                                 s3_bucket.objects.all().delete()
                     
-                    response = client.delete_bucket(
+                    response = s3_client.delete_bucket(
                         Bucket=bucket_name['Name']
                     )          
                 except:
