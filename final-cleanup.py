@@ -9,6 +9,7 @@ import sys
 import os 
 import json
 import boto3
+import time 
 
 def main():
     """
@@ -33,17 +34,21 @@ def main():
                     response = s3_client.get_bucket_tagging(
                         Bucket=bucket_name['Name']
                     )
+                    
+                    if 'TagSet' in response: 
+                        for tag in response['TagSet']:
+                            if (tag['Key'] == 'bucket-for-what') and (tag['Value'] == region + '-' + 'system-cloudtrail-log-storage'):
+                                # Delete the objects stored in S3 within reinvent-builders-bucket
+                                s3_bucket = s3_resource.Bucket(bucket_name['Name'])
+                                s3_bucket.objects.all().delete()
+                    
+                    response = client.delete_bucket(
+                        Bucket=bucket_name['Name']
+                    )          
                 except:
                     pass
         
-                if 'TagSet' in response: 
-                    for tag in response['TagSet']:
-                        if (tag['Key'] == 'bucket-for-what') and (tag['Value'] == region + '-' + 'system-cloudtrail-log-storage'):
-                            # Delete the objects stored in S3 within reinvent-builders-bucket
-                            s3_bucket = s3_resource.Bucket(bucket_name['Name'])
-                            s3_bucket.objects.all().delete()
-                            
-            
+        # Remove Cloudformation stacks        
         response = cf_client.list_stacks(
             StackStatusFilter=[
                 'CREATE_COMPLETE',
@@ -65,6 +70,8 @@ def main():
                 response = cf_client.delete_stack(
                     StackName='data-protection-cse',
                 )
+                
+            time.sleep(300)
                 
             if stack['StackName'] == 'data-protection-env-setup':
                 response = cf_client.delete_stack(
