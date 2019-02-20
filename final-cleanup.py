@@ -19,7 +19,8 @@ def main():
     #######################################################
     """
     try:
-        print "\n It takes about 4 minutes for the final cleanup to complete" 
+        print "\n It takes about 12 minutes for the final cleanup to complete" 
+        print "\n Please leave this browser window open until all CF stacks created for this workshop are deleted"
         az = subprocess.check_output(['curl', '-s', 'http://169.254.169.254/latest/meta-data/placement/availability-zone'])
         list_az = az.split('-')
         region = list_az[0]+ '-' + list_az[1] + '-' + list_az[2][0]
