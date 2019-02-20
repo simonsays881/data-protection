@@ -67,8 +67,8 @@ def main():
                 )
                 
             if stack['StackName'] == 'data-protection-env-setup':
-                response = cf_client.delete_stack_set(
-                    StackSetName='data-protection-env-setup'
+                response = cf_client.delete_stack(
+                    StackName='data-protection-env-setup'
                 )
                 
         print "\n Final Cleanup initiated - you can close this browser tab" 
