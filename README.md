@@ -10,13 +10,6 @@ This workshop demonstrates client side encryption
 
 <a><img src="images/generatedatakey.png" width="700" height="500"></a><br>
 
-
-### Let's setup the Cloudformation stack required for this workshop :
-
-[![Deploy Client Side Encryption CloudFormation Stack](images/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?#/stacks/new?stackName=data-protection-cse&templateURL=https://s3.amazonaws.com/crypto-workshop-dont-delete/template-cse.yaml)
-
-The above stack creates a cloudwatch event rule used for this workshop to analyze GenerateDataKey API calls
-
 ## Let's do some client side encryption
 
 Open the Cloud9 IDE environment called **workshop-environment**. Within the Cloud9 IDE open the bash terminal and change the working directory to **data-protection ** and use the following command to checkout code for this usecase :
