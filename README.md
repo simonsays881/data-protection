@@ -12,16 +12,6 @@ The on-premise application in a data-center is for illustration purposes. We won
 on-premise application for this usecase. Only the lambda function behind the application load balancer
 will be deployed
 
-### Cloudformation templates for the setting up architecture for this usecase
-
-Please run the below cloudformation stack in your AWS account
-
-### Step 1 :
-
-[![Deploy acm-pca-usecase-6 cf stack](images/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?#/stacks/new?stackName=acm-pca-usecase-6&templateURL=https://s3.amazonaws.com/crypto-workshop-dont-delete/acm-alb-pca.yaml)
-
-The above stack creates the necessary services to build out the AWS architecture shown above 
-
 ## Let's do some private cert generaton for a private domain with AWS Certificate Manager(ACM) private certificate authority(PCA) :
 
 Open the Cloud9 IDE environment called **workshop-environment**. Within the Cloud9 IDE open the bash terminal and change the working directory to **data-protection ** and use the following command to checkout code for this usecase :
