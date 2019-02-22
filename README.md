@@ -170,6 +170,8 @@ Run the python module named **usecase-5-step-9.py**
 Run the python module named **usecase-5-step-10-cleanup.py**
 
 * This module cleans up all the resources that were created as part of this usecase
+* Please make sure that you run this cleanup script. Otherwise you will continue accruing charges for the ACM private
+  certificate authority that was created during this usecase
 
 
 
