@@ -170,6 +170,8 @@ Run the python module named ***usecase-6-step-9-cleanup.py***
 This is the step for cleaning up all the resources that were created for the **acm-pca-usecase-6**
 
 * This module cleans up all the local files, S3 buckets, target groups,listeners that was created in the python modules for this usecase.
+* Please make sure that you run this cleanup script. Otherwise you will continue accruing charges for the ACM private
+  certificate authority that was created during this usecase
 * You should see the following printed in the runner window pane.
 
 **Everything cleaned up ,you are all good !!**
