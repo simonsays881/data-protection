@@ -63,20 +63,21 @@ def main():
         for stack in response['StackSummaries']:
             if stack['StackName'] == 'acm-pca-usecase-6':
                 print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','acm-pca-usecase-6'])
+                time.sleep(200)
 
-            time.sleep(5)
+            
             if stack['StackName'] == 'data-protection-cse-datakey-caching':
                 print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-cse-datakey-caching'])
-            time.sleep(5)
+                time.sleep(100)
+            
 
             if stack['StackName'] == 'data-protection-cse':
                 print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-cse'])
+                time.sleep(100)
 
-                
-            time.sleep(10)
-                
             if stack['StackName'] == 'data-protection-env-setup':
                 print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-env-setup'])
+                time.sleep(20)
 
         print "\n Final Cleanup initiated - you can close this browser tab" 
     except:
