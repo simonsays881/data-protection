@@ -63,23 +63,21 @@ def main():
         for stack in response['StackSummaries']:
             if stack['StackName'] == 'acm-pca-usecase-6':
                 print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','acm-pca-usecase-6'])
-                print "CF Stack acm-pca-usecase-6 deletion complete"
-                
+
+            time.sleep(5)
             if stack['StackName'] == 'data-protection-cse-datakey-caching':
                 print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-cse-datakey-caching'])
-                print "CF Stack data-protection-cse-datakey-caching deletion complete"
-                
+            time.sleep(5)
+
             if stack['StackName'] == 'data-protection-cse':
                 print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-cse'])
-                print "CF Stack data-protection-cse deletion complete"
 
                 
             time.sleep(10)
                 
             if stack['StackName'] == 'data-protection-env-setup':
                 print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-env-setup'])
-                print "CF Stack data-protection-env-setup deletion complete"
-    
+
         print "\n Final Cleanup initiated - you can close this browser tab" 
     except:
         print "Unexpected error:", sys.exc_info()[0]
