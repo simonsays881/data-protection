@@ -62,7 +62,7 @@ def main():
         
         for stack in response['StackSummaries']:
             if stack['StackName'] == 'template-workshops-setup':
-                print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','acm-pca-usecase-6'])
+                print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','template-workshops-setup'])
                 time.sleep(200)
 
         print "\n Final CF stack cleanup initiated - you can go ahead and close this browser window" 
