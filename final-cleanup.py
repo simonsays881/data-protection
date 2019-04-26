@@ -61,23 +61,9 @@ def main():
         #print response
         
         for stack in response['StackSummaries']:
-            if stack['StackName'] == 'acm-pca-usecase-6':
+            if stack['StackName'] == 'template-workshops-setup':
                 print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','acm-pca-usecase-6'])
                 time.sleep(200)
-
-            
-            if stack['StackName'] == 'data-protection-cse-datakey-caching':
-                print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-cse-datakey-caching'])
-                time.sleep(100)
-            
-
-            if stack['StackName'] == 'data-protection-cse':
-                print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-cse'])
-                time.sleep(100)
-
-            if stack['StackName'] == 'data-protection-env-setup':
-                print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-env-setup'])
-                time.sleep(20)
 
         print "\n Final CF stack cleanup initiated - you can go ahead and close this browser window" 
     except:
