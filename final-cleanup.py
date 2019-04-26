@@ -19,7 +19,7 @@ def main():
     #######################################################
     """
     try:
-        print "\n It takes about 12 minutes for the final cleanup to complete" 
+        print "\n It takes about 10 minutes for the final cleanup to complete and all CF stacks to be deleted from your account" 
         print "\n Please leave this browser window open until all CF stacks created for this workshop are deleted"
         az = subprocess.check_output(['curl', '-s', 'http://169.254.169.254/latest/meta-data/placement/availability-zone'])
         list_az = az.split('-')
@@ -79,7 +79,7 @@ def main():
                 print subprocess.check_output(['aws','cloudformation','delete-stack','--stack-name','data-protection-env-setup'])
                 time.sleep(20)
 
-        print "\n Final Cleanup initiated - you can close this browser tab" 
+        print "\n Final CF stack cleanup initiated - you can go ahead and close this browser window" 
     except:
         print "Unexpected error:", sys.exc_info()[0]
         raise
